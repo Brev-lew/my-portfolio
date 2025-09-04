@@ -102,3 +102,12 @@ function toggleDropdown(id) {
     dropdown.classList.toggle("hidden");
   }
 }
+
+function copyMpesaNumber() {
+  const number = document.getElementById("mpesa-number").innerText;
+  navigator.clipboard.writeText(number).then(() => {
+    alert("😂 You’ve just bought me a plate of Ugali Skuma! M-Pesa number copied: " + number);
+  }).catch(err => {
+    console.error("Failed to copy: ", err);
+  });
+}
