@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lewis Ombachi Mogeni - Futuristic Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'matte-black': '#0D0D0D',
+            'electric-cyan': '#00FFFF',
+            'hot-magenta': '#FF00FF',
+            'neon-green': '#39FF14',
+            'light-gray-text': '#EAEAEA',
+            'muted-gray': '#444444',
+            'dark-bg': '#101010',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'pulse-neon-cyan': 'pulse-neon-cyan 2s infinite',
+            'pulse-neon-magenta': 'pulse-neon-magenta 2s infinite',
+            'border-glow': 'border-glow 1.5s infinite alternate',
+            'fade-in': 'fade-in 1s ease-out',
+            'slide-in-right': 'slide-in-right 0.8s ease-out',
+            'slide-in-left': 'slide-in-left 0.8s ease-out',
+            'typewriter': 'typewriter 4s steps(44) forwards',
+            'blink-caret': 'blink-caret 0.75s step-end infinite',
+          },
+          keyframes: {
+            'pulse-neon-cyan': {
+              '0%, 100%': { 'box-shadow': '0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF' },
+              '50%': { 'box-shadow': 'none' },
+            },
+            'pulse-neon-magenta': {
+              '0%, 100%': { 'box-shadow': '0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF, 0 0 20px #FF00FF' },
+              '50%': { 'box-shadow': 'none' },
+            },
+            'border-glow': {
+              '0%, 100%': { 'border-color': '#00FFFF' },
+              '50%': { 'border-color': '#FF00FF' },
+            },
+            'fade-in': {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+            'slide-in-right': {
+              '0%': { transform: 'translateX(20px)', opacity: 0 },
+              '100%': { transform: 'translateX(0)', opacity: 1 },
+            },
+            'slide-in-left': {
+              '0%': { transform: 'translateX(-20px)', opacity: 0 },
+              '100%': { transform: 'translateX(0)', opacity: 1 },
+            },
+            'typewriter': {
+              '0%': { width: '0' },
+              '100%': { width: '100%' },
+            },
+            'blink-caret': {
+              '0%, 100%': { 'border-color': 'transparent' },
+              '50%': { 'border-color': '#EAEAEA' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-matte-black text-light-gray-text antialiased font-sans overflow-x-hidden">
+  <!-- Particle.js Container -->
+  <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+
+  <div class="min-h-screen flex flex-col z-10 relative">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-md bg-matte-black/70 shadow-lg">
+      <div class="flex justify-center space-x-6 md:space-x-12 navbar">
+        <a href="#home" class="text-light-gray-text hover:text-electric-cyan transition duration-300"
+          onclick="showSection('home')">Home</a>
+        <a href="#about" class="text-light-gray-text hover:text-electric-cyan transition duration-300"
+          onclick="showSection('about')">About</a>
+        <a href="#skills" class="text-light-gray-text hover:text-electric-cyan transition duration-300"
+          onclick="showSection('skills')">Skills</a>
+        <a href="#projects" class="text-light-gray-text hover:text-electric-cyan transition duration-300"
+          onclick="showSection('projects')">Projects</a>
+        <a href="#freelancing" class="text-light-gray-text hover:text-electric-cyan transition duration-300"
+          onclick="showSection('freelancing')">Freelancing</a>
+        <a href="#contact" class="text-light-gray-text hover:text-electric-cyan transition duration-300"
+          onclick="showSection('contact')">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
+      <!-- Home Section -->
+      <div id="home" class="section-container active">
+        <div class="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center animate-fade-in">
+          <div
+            class="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden mb-6 border-4 border-electric-cyan shadow-lg animate-pulse-neon-cyan">
+            <img src="/services/images/lewis ombachi photo.jpg"
+              alt="Lewis Ombachi Mogeni" class="w-full h-full object-cover" />
+          </div>
+          <h1
+            class="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-2 neon-text-cyan animate-slide-in-left">
+            Lewis Ombachi Mogeni
+          </h1>
+          <p class="text-lg sm:text-xl lg:text-2xl font-light neon-text-magenta mb-4">
+            <span id="typewriter-text" class="typewriter-container"></span>
+          </p>
+          <p class="max-w-3xl text-sm sm:text-base font-light mb-8">
+            An Ombachi of all trades and master of some is better than a master of one; and I've got the portfolio to prove it. 
+            I am a highly diligent Telecommunication and Information Engineering graduate with a
+            deep-rooted passion for understanding the complexities of the physical world and a strong
+            commitment to innovation.
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#projects" onclick="showSection('projects')"
+              class="px-8 py-3 btn-neon-green font-bold rounded-lg hover-neon-glow transition-all duration-300 text-base sm:text-lg">
+              View My Work
+            </a>
+            <a href="#contact" onclick="showSection('contact')"
+              class="px-8 py-3 border-2 border-electric-cyan text-electric-cyan font-bold rounded-lg hover:bg-electric-cyan hover:text-matte-black transition-all duration-300 text-base sm:text-lg">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div id="about" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
+        <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
+          <h2
+            class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
+            <!-- About Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-user">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>About Me</span>
+          </h2>
+
+          <div class="space-y-6 text-base sm:text-lg leading-relaxed">
+            <p>
+              I'm Lewis Ombachi Mogeni, a highly diligent Telecommunication and Information Engineering graduate from
+              <strong>Dedan Kimathi University of Technology (May 2025)</strong>. I combine a deep passion for the complexities
+              of the physical world with a strong commitment to innovation. My academic and practical experiences have provided
+              a robust foundation in telecommunication and information engineering principles, complemented by proven leadership,
+              problem-solving, strategic planning, and communication skills.
+            </p>
+            <p>
+              In parallel, I have eight years of diverse freelance writing and editing experience. I'm adept at transforming
+              complex material into clear, polished, and engaging documents across various fields, including academic research,
+              technical documentation (IoT, telecommunications), business reports, and creative content. My meticulous attention
+              to grammar, flow, and structure ensures error-free, compelling content that exceeds expectations.
+            </p>
+          </div>
+
+          <!-- Resume Button -->
+          <div class="mt-6">
+            <a href="assets/docs/LEWIS OMBACHI MOGENI CV.pdf" target="_blank"
+              class="inline-flex items-center px-6 py-3 btn-neon-green font-bold rounded-lg hover-neon-glow transition-all duration-300 text-base sm:text-lg">
+              <!-- Resume Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 11V3m0 8a4 4 0 11-4 4h8a4 4 0 01-4-4zm-6 8h12" />
+              </svg>
+              View Resume
+            </a>
+          </div>
+        </div>
+      </div>
+       <!-- Skills Section -->
+        <div id="skills" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
+          <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
+              <!-- Skills Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-sparkles">
+                <path
+                  d="M9.91 18.66a2 2 0 0 1-2.42-.82L4.5 12 7.5 7.16a2 2 0 0 1 2.42-.82L12 5l2.09-1.24a2 2 0 0 1 2.42.82L19.5 12l-3 4.84a2 2 0 0 1-2.42.82L12 19l-2.09-1.24Z" />
+                <path d="m20 3-1.25 2.09" />
+                <path d="m3 20 1.25-2.09" />
+                <path d="m16.5 14.5 1.5 2.5" />
+                <path d="m7.5 9.5-1.5-2.5" />
+              </svg>
+              <span>Skills</span>
+            </h2>
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-hot-magenta">Technical Skills</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- Programming Languages -->
+                  <div class="bg-muted-gray/20 rounded-lg p-4">
+                    <h4 class="font-medium text-electric-cyan mb-2">Programming Languages</h4>
+                    <ul class="text-sm space-y-1">
+                      <li>C/C++</li>
+                      <li>Python</li>
+                      <li>JavaScript</li>
+                      <li>MATLAB</li>
+                    </ul>
+                  </div>
+
+                  <!-- Hardware & Embedded -->
+                  <div class="bg-muted-gray/20 rounded-lg p-4">
+                    <h4 class="font-medium text-electric-cyan mb-2">Hardware & Embedded Systems</h4>
+                    <ul class="text-sm space-y-1">
+                      <li>Analog/Digital Circuits (Design & Troubleshooting)</li>
+                      <li>STM32 Microcontrollers (C)</li>
+                      <li>PCB Layouts (Ki-CAD)</li>
+                      <li>Li-ion Battery Packs (with BMS)</li>
+                    </ul>
+                  </div>
+
+                  <!-- Networking -->
+                  <div class="bg-muted-gray/20 rounded-lg p-4">
+                    <h4 class="font-medium text-electric-cyan mb-2">Networking & Telecom</h4>
+                    <ul class="text-sm space-y-1">
+                      <li>Fiber Optic Installation</li>
+                      <li>Network Management</li>
+                      <li>Router Configuration</li>
+                      <li>Satellite Phone & Radio Repair</li>
+                    </ul>
+                  </div>
+
+                  <!-- Web Technologies -->
+                  <div class="bg-muted-gray/20 rounded-lg p-4">
+                    <h4 class="font-medium text-electric-cyan mb-2">Web Technologies (Basic)</h4>
+                    <ul class="text-sm space-y-1">
+                      <li>HTML, CSS, JavaScript</li>
+                      <li>React, Node.js</li>
+                    </ul>
+                  </div>
+
+                  <!-- Design & CAD -->
+                  <div class="bg-muted-gray/20 rounded-lg p-4">
+                    <h4 class="font-medium text-electric-cyan mb-2">Design & CAD</h4>
+                    <ul class="text-sm space-y-1">
+                      <li>AutoCAD MEP (Piping/Wiring, Fire Protection)</li>
+                      <li>Inventor Software</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Projects Section -->
+        <div id="projects" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
+          <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
+              <!-- Projects Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-rocket">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.63 1.25-1.5 1.25-2.53 0-1.03-.7-1.99-1.81-2.54-.91-.44-2.1-.14-2.82.58-.91.91-1.29 2.1-1.6 3.09-.23.72-.4 1.37-.5 1.81" />
+                <path d="m14 15 11-11" />
+                <path d="M14 15 14 18 17 18 17 15" />
+                <path d="M18 10h-2c-1.33 0-2 1.2-2 2v3c0 1.2.67 2 2 2h2" />
+                <path d="M21 7h-2c-1.33 0-2 1.2-2 2v3c0 1.2.67 2 2 2h2" />
+                <path d="M7 6v-1c0-1.1.9-2 2-2h2" />
+                <path d="M10 3h2" />
+              </svg>
+              <span>Key Projects & Experience</span>
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Project 1 -->
+              <div
+                class="relative bg-muted-gray/20 rounded-lg overflow-hidden border border-muted-gray hover-neon-glow transition-all duration-300 animate-slide-in-right">
+                <img src="https://placehold.co/400x250/393939/EAEAEA?text=CISMIC+Engineering" alt="CISMIC Project"
+                  class="w-full h-48 object-cover object-center" />
+                <div class="p-6">
+                  <h3 class="text-lg font-semibold text-electric-cyan mb-2">CISMIC Electrical & Telecom Engineer Intern</h3>
+                  <p class="text-sm text-light-gray-text mb-4">
+                    I designed/troubleshot circuits, programmed STM32 microcontrollers, created PCB layouts, and repaired military-grade telecom equipment.
+                  </p>
+                  <div class="space-y-2">
+                    <div>
+                      <h4 class="font-medium text-hot-magenta">My Role:</h4>
+                      <p class="text-sm">
+                        Designed and troubleshot analog and digital circuits, programmed embedded systems, and performed critical repairs on military-grade telecom equipment.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-hot-magenta">Impact:</h4>
+                      <p class="text-sm">
+                        Improved system reliability by 20% and reduced equipment downtime, ensuring seamless communication for a key government defense unit.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div
+                class="relative bg-muted-gray/20 rounded-lg overflow-hidden border border-muted-gray hover-neon-glow transition-all duration-300 animate-slide-in-left">
+                <img src="https://placehold.co/400x250/393939/EAEAEA?text=PoaNet+Fiber+Installation" alt="PoaNet Project"
+                  class="w-full h-48 object-cover object-center" />
+                <div class="p-6">
+                  <h3 class="text-lg font-semibold text-electric-cyan mb-2">PoaNet Technologies - Support Technician</h3>
+                  <p class="text-sm text-light-gray-text mb-4">
+                    I installed fiber optic cables, managed network configurations, and installed CCTV/biometric systems.
+                  </p>
+                  <div class="space-y-2">
+                    <div>
+                      <h4 class="font-medium text-hot-magenta">My Role:</h4>
+                      <p class="text-sm">
+                        Led the physical installation of fiber optic networks and configured routers, ensuring robust connectivity for clients.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-hot-magenta">Impact:</h4>
+                      <p class="text-sm">
+                        Successfully deployed over 50 new fiber connections and improved network stability by 15%, enhancing customer satisfaction.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div
+                class="relative bg-muted-gray/20 rounded-lg overflow-hidden border border-muted-gray hover-neon-glow transition-all duration-300 animate-slide-in-right">
+                <img src="https://placehold.co/400x250/393939/EAEAEA?text=AutoCAD+Design" alt="Public Works Project"
+                  class="w-full h-48 object-cover object-center" />
+                <div class="p-6">
+                  <h3 class="text-lg font-semibold text-electric-cyan mb-2">State Department of Public Works - Attache</h3>
+                  <p class="text-sm text-light-gray-text mb-4">
+                    Designed electrical piping/wiring and fire protection systems using AutoCAD, and prepared Bills of Quantities.
+                  </p>
+                  <div class="space-y-2">
+                    <div>
+                      <h4 class="font-medium text-hot-magenta">My Role:</h4>
+                      <p class="text-sm">
+                        Designed electrical and fire protection systems, and contributed to the strategic planning of major public infrastructure projects.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-hot-magenta">Impact:</h4>
+                      <p class="text-sm">
+                        Provided detailed designs that led to a 10% cost saving on materials and ensured compliance with national building codes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Freelancing Section -->
+        <div id="freelancing" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
+          <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
+              <!-- Freelancing Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-briefcase">
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              </svg>
+              <span>Freelancing</span>
+            </h2>
+
+            <!-- Subsections -->
+            <div class="space-y-6">
+
+              <!-- Writing -->
+              <div class="bg-muted-gray/20 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-electric-cyan mb-2 flex items-center justify-between">
+                  ✍️ Writing
+                  <!-- Dropdown Toggle Button -->
+                  <button onclick="toggleDropdown('writing-samples')" 
+                    class="text-sm px-3 py-1 border border-electric-cyan text-electric-cyan rounded-md hover:bg-electric-cyan hover:text-dark-bg transition duration-300">
+                    View Samples ▼
+                  </button>
+                </h3>
+                <p class="text-sm text-light-gray-text mb-4">
+                  Technical, creative, and academic writing across industries. I simplify complex topics into clear, engaging content.
+                </p>
+
+                <!-- Dropdown Menu -->
+                <div id="writing-samples" class="hidden space-y-2 mt-4">
+                  <a href="services/writing-examples/technical-writing-sample.pdf" target="_blank"
+                    class="block text-sm text-light-gray-text hover:text-electric-cyan transition-colors">
+                    1. Technical Writing Sample
+                  </a>
+                  <a href="services/writing-examples/dissertation-sample.pdf" target="_blank"
+                    class="block text-sm text-light-gray-text hover:text-electric-cyan transition-colors">
+                    2. Dissertations / Theses Sample
+                  </a>
+                  <a href="services/writing-examples/case-study-sample.pdf" target="_blank"
+                    class="block text-sm text-light-gray-text hover:text-electric-cyan transition-colors">
+                    3. Case Studies Sample
+                  </a>
+                  <a href="services/writing-examples/creative-writing-sample.pdf" target="_blank"
+                    class="block text-sm text-light-gray-text hover:text-electric-cyan transition-colors">
+                    4. Creative Writing
+                  </a>
+                </div>
+              </div>
+
+              <!-- Frontend Web Design -->
+              <div class="bg-muted-gray/20 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-electric-cyan mb-2">💻 Frontend Web Design</h3>
+                <p class="text-sm text-light-gray-text mb-4">
+                  Portfolio and business website designs built with HTML, CSS, Tailwind, and React.
+                </p>
+                <a href="https://github.com/Lewisombachi" target="_blank" rel="noopener noreferrer"
+                  class="text-sm text-electric-cyan hover:text-hot-magenta underline">
+                  View Web Projects
+                </a>
+              </div>
+
+              <!-- Video Editing & Graphic Design -->
+              <div class="bg-muted-gray/20 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-electric-cyan mb-2">🎥 Video Editing & 🎨 Graphic Design</h3>
+                <p class="text-sm text-light-gray-text mb-4">
+                  Promo videos, graphics, and branding content crafted for businesses and personal projects.
+                </p>
+                <a href="https://github.com/Lewisombachi" target="_blank" rel="noopener noreferrer"
+                  class="text-sm text-electric-cyan hover:text-hot-magenta underline">
+                  View Designs
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Contact Section -->
+        <div id="contact" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
+          <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
+            <h2
+              class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
+              <!-- Contact Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-phone-call">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2.18A19.02 19.02 0 0 1 8.63 8.63 2 2 0 0 1 6.46 6.46v-3a2 2 0 0 1 2-2h1.77a2 2 0 0 1 2 1.77l.79 3.54a2 2 0 0 1-1.15 2.01l-3.32 1.66a2.03 2.03 0 0 0-.96 1.83v2.88a2 2 0 0 0 2.22 2.22l2.88-.96a2 2 0 0 0 1.83-.96l1.66-3.32a2 2 0 0 1 2.01-1.15h3.54a2 2 0 0 1 1.77 2z" />
+                <path d="M19 2a8 8 0 0 1 0 16" />
+                <path d="M22 2a12 12 0 0 1 0 24" />
+              </svg>
+              <span>Get in Touch</span>
+            </h2>
+
+            <p class="text-base sm:text-lg mb-8">
+              I'm always open to new opportunities and collaborations. Feel free to reach out to me via email or connect with me on LinkedIn.
+            </p>
+
+            <div class="space-y-6">
+              <!-- Contact Information -->
+              <div class="bg-muted-gray/20 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-electric-cyan mb-2">Contact Information</h3>
+                <div class="flex items-center mb-2">
+                  <span class="text-sm font-bold mr-2">Email:</span>
+                  <span id="email-address" class="text-sm sm:text-base">lewiombachi@gmail.com</span>
+                  <button onclick="copyEmail()" aria-label="Copy email address"
+                    class="ml-3 p-1 rounded-full text-electric-cyan hover:bg-electric-cyan hover:text-dark-bg transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-clipboard">
+                      <rect width="8" height="16" x="8" y="2" rx="2" ry="2" />
+                      <path d="M16 2h2a2 2 0 0 1 2 2v2" />
+                      <path d="M16 22h2a2 2 0 0 0 2-2v-2" />
+                      <path d="M4 22h2a2 2 0 0 0 2-2v-2" />
+                      <path d="M4 2h2a2 2 0 0 1 2-2v2" />
+                      <line x1="12" x2="12" y1="12" y2="16" />
+                      <line x1="12" x2="12" y1="8" y2="10" />
+                      <line x1="12" x2="12" y1="18" y2="20" />
+                    </svg>
+                  </button>
+                </div>
+                <p class="mb-1"><strong>Phone:</strong> +254 790 349 191</p>
+                <p><strong>Location:</strong> Nairobi, Kenya</p>
+              </div>
+
+              <!-- Social Links -->
+              <div class="bg-muted-gray/20 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-electric-cyan mb-2">Social Links</h3>
+                <div class="flex space-x-4">
+                  <!-- LinkedIn -->
+                  <a href="https://www.linkedin.com/in/lewis-ombachi-5261a12aa" target="_blank" rel="noopener noreferrer"
+                    class="text-light-gray-text hover:text-electric-cyan transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-linkedin">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                      <rect width="4" height="12" x="2" y="9" />
+                      <circle cx="4" cy="4" r="2" />
+                    </svg>
+                  </a>
+                  <!-- GitHub -->
+                  <a href="https://github.com/Lewisombachi" target="_blank" rel="noopener noreferrer"
+                    class="text-light-gray-text hover:text-electric-cyan transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-github">
+                      <path d="M15 22s-4 1-6 2c-2 0-2-1-2-1L2 14c-1-2 1-3 1-3L6 9l4 2 2-2 4 1-2 3c1 1 2 2 2 2zM12 2L9 6l3 1 3-3z" />
+                      <path d="M15 22s-4 1-6 2c-2 0-2-1-2-1L2 14c-1-2 1-3 1-3L6 9l4 2 2-2 4 1-2 3c1 1 2 2 2 2z" />
+                      <path d="M12 2L9 6l3 1 3-3z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- KEEP all other sections (About, Skills, Projects, Writing, Testimonials, Contact) UNCHANGED -->
+      <!-- Copy-paste from your original file; no edits needed except script/style cleanup -->
+    </main>
+  </div>
+
+  <!-- External JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
