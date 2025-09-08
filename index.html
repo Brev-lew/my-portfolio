@@ -258,15 +258,17 @@
             </div>
           </div>
         </div>
-        <!-- Projects Section -->
+        <!-- Projects & Experience Section -->
         <div id="projects" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
           <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
-            <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
+            <h2
+              class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 inline-flex items-center space-x-2">
               <!-- Projects Icon -->
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-rocket">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.63 1.25-1.5 1.25-2.53 0-1.03-.7-1.99-1.81-2.54-.91-.44-2.1-.14-2.82.58-.91.91-1.29 2.1-1.6 3.09-.23.72-.4 1.37-.5 1.81" />
+                <path
+                  d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.63 1.25-1.5 1.25-2.53 0-1.03-.7-1.99-1.81-2.54-.91-.44-2.1-.14-2.82.58-.91.91-1.29 2.1-1.6 3.09-.23.72-.4 1.37-.5 1.81" />
                 <path d="m14 15 11-11" />
                 <path d="M14 15 14 18 17 18 17 15" />
                 <path d="M18 10h-2c-1.33 0-2 1.2-2 2v3c0 1.2.67 2 2 2h2" />
@@ -359,8 +361,60 @@
                 </div>
               </div>
             </div>
+
+            <!-- Completed Projects Button -->
+            <div class="text-center mt-8">
+              <button onclick="toggleTieProjects()" 
+                class="px-6 py-3 btn-neon-green font-bold rounded-lg hover-neon-glow transition-all duration-300">
+                Completed Projects
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- Hidden TIE Projects Section -->
+        <div id="tie-projects" class="section-container max-w-6xl mx-auto py-12 animate-fade-in hidden">
+          <h2 class="text-3xl font-bold text-electric-cyan mb-8">📡 Featured TIE Projects</h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- TIE Project 1 -->
+            <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 shadow-lg hover-neon-glow transition">
+              <h3 class="text-xl font-bold text-hot-magenta mb-2">5G Network Simulation</h3>
+              <p class="text-light-gray-text mb-4">
+                Simulated 5G handover and throughput analysis using MATLAB & Simulink. Focused on QoS optimization.
+              </p>
+              <a href="https://github.com/yourusername/5g-simulation" target="_blank" 
+                class="btn-neon-green px-4 py-2 rounded-lg font-bold hover-neon-glow">
+                View on GitHub
+              </a>
+            </div>
+
+            <!-- TIE Project 2 -->
+            <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 shadow-lg hover-neon-glow transition">
+              <h3 class="text-xl font-bold text-hot-magenta mb-2">IoT Smart Meter</h3>
+              <p class="text-light-gray-text mb-4">
+                Developed a prototype IoT smart energy meter with ESP32, MQTT, and cloud dashboard integration.
+              </p>
+              <a href="https://github.com/yourusername/iot-smart-meter" target="_blank" 
+                class="btn-neon-green px-4 py-2 rounded-lg font-bold hover-neon-glow">
+                View GitHub Repo
+              </a>
+            </div>
+
+            <!-- TIE Project 3 -->
+            <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 shadow-lg hover-neon-glow transition">
+              <h3 class="text-xl font-bold text-hot-magenta mb-2">Optical Fiber Analysis</h3>
+              <p class="text-light-gray-text mb-4">
+                Modeled attenuation and dispersion in optical fibers using Python and MATLAB, validated with real data.
+              </p>
+              <a href="assets/docs/fiber-analysis-report.pdf" target="_blank" 
+                class="btn-neon-green px-4 py-2 rounded-lg font-bold hover-neon-glow">
+                View Report
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Freelancing Section -->
         <div id="freelancing" class="section-container max-w-5xl mx-auto py-8 animate-fade-in">
           <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg">
