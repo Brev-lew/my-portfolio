@@ -364,54 +364,12 @@
 
             <!-- Completed Projects Button -->
             <div class="text-center mt-8">
-              <button onclick="toggleTieProjects()" 
+              <a href="tie-projects.html" 
                 class="px-6 py-3 btn-neon-green font-bold rounded-lg hover-neon-glow transition-all duration-300">
                 Completed Projects
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hidden TIE Projects Section -->
-        <div id="tie-projects" class="section-container max-w-6xl mx-auto py-12 animate-fade-in hidden">
-          <h2 class="text-3xl font-bold text-electric-cyan mb-8">📡 Featured TIE Projects</h2>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- TIE Project 1 -->
-            <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 shadow-lg hover-neon-glow transition">
-              <h3 class="text-xl font-bold text-hot-magenta mb-2">5G Network Simulation</h3>
-              <p class="text-light-gray-text mb-4">
-                Simulated 5G handover and throughput analysis using MATLAB & Simulink. Focused on QoS optimization.
-              </p>
-              <a href="https://github.com/yourusername/5g-simulation" target="_blank" 
-                class="btn-neon-green px-4 py-2 rounded-lg font-bold hover-neon-glow">
-                View on GitHub
               </a>
             </div>
 
-            <!-- TIE Project 2 -->
-            <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 shadow-lg hover-neon-glow transition">
-              <h3 class="text-xl font-bold text-hot-magenta mb-2">IoT Smart Meter</h3>
-              <p class="text-light-gray-text mb-4">
-                Developed a prototype IoT smart energy meter with ESP32, MQTT, and cloud dashboard integration.
-              </p>
-              <a href="https://github.com/yourusername/iot-smart-meter" target="_blank" 
-                class="btn-neon-green px-4 py-2 rounded-lg font-bold hover-neon-glow">
-                View GitHub Repo
-              </a>
-            </div>
-
-            <!-- TIE Project 3 -->
-            <div class="bg-dark-bg border border-muted-gray rounded-xl p-6 shadow-lg hover-neon-glow transition">
-              <h3 class="text-xl font-bold text-hot-magenta mb-2">Optical Fiber Analysis</h3>
-              <p class="text-light-gray-text mb-4">
-                Modeled attenuation and dispersion in optical fibers using Python and MATLAB, validated with real data.
-              </p>
-              <a href="assets/docs/fiber-analysis-report.pdf" target="_blank" 
-                class="btn-neon-green px-4 py-2 rounded-lg font-bold hover-neon-glow">
-                View Report
-              </a>
-            </div>
           </div>
         </div>
 
@@ -469,15 +427,28 @@
 
               <!-- Frontend Web Design -->
               <div class="bg-muted-gray/20 rounded-lg p-6">
-                <h3 class="text-lg font-semibold text-electric-cyan mb-2">💻 Frontend Web Design</h3>
+                <h3 class="text-lg font-semibold text-electric-cyan mb-2 flex items-center justify-between">
+                  💻 Frontend Web Design
+                  <!-- Dropdown Toggle Button -->
+                  <button onclick="toggleDropdown('frontend-projects')" 
+                    class="text-sm px-3 py-1 border border-electric-cyan text-electric-cyan rounded-md hover:bg-electric-cyan hover:text-dark-bg transition duration-300">
+                    View Projects ▼
+                  </button>
+                </h3>
                 <p class="text-sm text-light-gray-text mb-4">
                   Portfolio and business website designs built with HTML, CSS, Tailwind, and React.
                 </p>
-                <a href="https://github.com/Lewisombachi" target="_blank" rel="noopener noreferrer"
-                  class="text-sm text-electric-cyan hover:text-hot-magenta underline">
-                  View Web Projects
-                </a>
+
+                <!-- Dropdown Menu -->
+                <div id="frontend-projects" class="hidden space-y-2 mt-4">
+                  <a href="https://brev-lew.github.io/pointless-mess/" target="_blank"
+                    class="block text-sm text-light-gray-text hover:text-electric-cyan transition-colors">
+                    1. Pointless Mess Project
+                  </a>
+                  <!-- Add more project links here later -->
+                </div>
               </div>
+
 
               <!-- Video Editing & Graphic Design -->
               <div class="bg-muted-gray/20 rounded-lg p-6">

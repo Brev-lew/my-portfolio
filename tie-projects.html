@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Completed TIE Projects - Lewis Ombachi</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'matte-black': '#0D0D0D',
+            'electric-cyan': '#00FFFF',
+            'hot-magenta': '#FF00FF',
+            'neon-green': '#39FF14',
+            'light-gray-text': '#EAEAEA',
+            'muted-gray': '#444444',
+            'dark-bg': '#101010',
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          animation: {
+            'pulse-neon-cyan': 'pulse-neon-cyan 2s infinite',
+            'pulse-neon-magenta': 'pulse-neon-magenta 2s infinite',
+            'border-glow': 'border-glow 1.5s infinite alternate',
+            'fade-in': 'fade-in 1s ease-out',
+            'slide-in-right': 'slide-in-right 0.8s ease-out',
+            'slide-in-left': 'slide-in-left 0.8s ease-out',
+          },
+          keyframes: {
+            'pulse-neon-cyan': {
+              '0%, 100%': { 'box-shadow': '0 0 10px #00FFFF, 0 0 20px #00FFFF' },
+              '50%': { 'box-shadow': 'none' },
+            },
+            'pulse-neon-magenta': {
+              '0%, 100%': { 'box-shadow': '0 0 10px #FF00FF, 0 0 20px #FF00FF' },
+              '50%': { 'box-shadow': 'none' },
+            },
+            'border-glow': {
+              '0%, 100%': { borderColor: '#00FFFF' },
+              '50%': { borderColor: '#FF00FF' },
+            },
+            'fade-in': { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+            'slide-in-right': { '0%': { transform: 'translateX(20px)', opacity: 0 }, '100%': { transform: 'translateX(0)', opacity: 1 } },
+            'slide-in-left': { '0%': { transform: 'translateX(-20px)', opacity: 0 }, '100%': { transform: 'translateX(0)', opacity: 1 } },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-matte-black text-light-gray-text font-sans antialiased overflow-x-hidden">
+  <!-- Particles Background -->
+  <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 p-4 backdrop-blur-md bg-matte-black/70 shadow-lg">
+    <div class="flex justify-center space-x-6 md:space-x-12">
+      <a href="index.html#home" class="text-light-gray-text hover:text-electric-cyan">Home</a>
+      <a href="index.html#about" class="text-light-gray-text hover:text-electric-cyan">About</a>
+      <a href="index.html#skills" class="text-light-gray-text hover:text-electric-cyan">Skills</a>
+      <a href="index.html#projects" class="text-light-gray-text hover:text-electric-cyan">Projects</a>
+      <a href="index.html#freelancing" class="text-light-gray-text hover:text-electric-cyan">Freelancing</a>
+      <a href="index.html#contact" class="text-light-gray-text hover:text-electric-cyan">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-5xl mx-auto bg-dark-bg border border-muted-gray rounded-xl p-6 sm:p-10 shadow-lg animate-fade-in">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-electric-cyan border-b-2 border-electric-cyan pb-2 flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M14 15 14 18 17 18 17 15" />
+          <path d="M21 7h-2c-1.33 0-2 1.2-2 2v3c0 1.2.67 2 2 2h2" />
+          <path d="M7 6v-1c0-1.1.9-2 2-2h2" />
+        </svg>
+        <span>Completed TIE Projects</span>
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card Example -->
+        <div class="relative bg-muted-gray/20 rounded-lg overflow-hidden border border-muted-gray hover-neon-glow transition-all duration-300 animate-slide-in-right">
+          <img src="https://placehold.co/400x250/393939/EAEAEA?text=Capstone+Project" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-electric-cyan mb-2">Capstone Project – IoT Smart Meter</h3>
+            <p class="text-sm text-light-gray-text mb-4">
+              Designed and deployed an IoT-based smart meter system integrating sensors with cloud analytics.
+            </p>
+            <h4 class="font-medium text-hot-magenta">Impact:</h4>
+            <p class="text-sm">Enabled real-time monitoring and reduced power wastage by 15%.</p>
+          </div>
+        </div>
+
+        <!-- Duplicate this card structure for each project -->
+        <div class="relative bg-muted-gray/20 rounded-lg overflow-hidden border border-muted-gray hover-neon-glow transition-all duration-300 animate-slide-in-left">
+          <img src="https://placehold.co/400x250/393939/EAEAEA?text=Signal+Processing" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-electric-cyan mb-2">Signal Processing Research</h3>
+            <p class="text-sm text-light-gray-text mb-4">
+              MATLAB-based analysis of wireless signals to optimize error correction algorithms.
+            </p>
+            <h4 class="font-medium text-hot-magenta">Impact:</h4>
+            <p class="text-sm">Improved transmission efficiency in noisy channels by 10%.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="index.html#projects" class="px-6 py-3 btn-neon-green font-bold rounded-lg hover-neon-glow transition-all duration-300">
+          ⬅ Back to Main Site
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
