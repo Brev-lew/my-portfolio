@@ -94,6 +94,62 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
 });
+// ==============================
+// Background Parallax Effect
+// ==============================
+const particles = document.getElementById("particles-js");
+const enableMotionBtn = document.getElementById("enable-motion-btn");
+
+// Mouse-based movement (for desktop/laptops)
+document.addEventListener("mousemove", function (e) {
+  if (particles) {
+    let moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+    let moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+    particles.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    particles.style.transition = "transform 0.1s linear";
+  }
+});
+
+// Tilt-based movement (for mobile/tablets)
+function enableTiltMotion() {
+  window.addEventListener("deviceorientation", function (event) {
+    if (particles) {
+      let moveX = (event.gamma / 45) * 15; // left-right tilt
+      let moveY = (event.beta / 45) * 15;  // front-back tilt
+      particles.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      particles.style.transition = "transform 0.1s linear";
+    }
+  });
+}
+
+// iOS Safari requires explicit permission
+function checkIOSPermission() {
+  if (typeof DeviceMotionEvent !== "undefined" &&
+      typeof DeviceMotionEvent.requestPermission === "function") {
+    // Show button for iOS
+    enableMotionBtn.classList.remove("hidden");
+    enableMotionBtn.addEventListener("click", async () => {
+      try {
+        const response = await DeviceMotionEvent.requestPermission();
+        if (response === "granted") {
+          enableMotionBtn.classList.add("hidden");
+          enableTiltMotion();
+        } else {
+          alert("Motion access denied. Tilt effect won't work.");
+        }
+      } catch (e) {
+        console.error("Error requesting motion permission:", e);
+      }
+    });
+  } else {
+    // Android / desktop → enable tilt immediately
+    enableTiltMotion();
+  }
+}
+
+// Run check on page load
+checkIOSPermission();
+
 
 // Toggle dropdown menus
 function toggleDropdown(id) {
